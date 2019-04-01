@@ -1,0 +1,71 @@
+{
+  "parser": "babel-eslint",
+  "extends": [
+     # http://eslint.org/docs/user-guide/configuring#using-eslintrecommended
+    "eslint:recommended",
+    # https://www.npmjs.com/package/eslint-plugin-protractor
+    "plugin:protractor/recommended",
+    # https://www.npmjs.com/package/eslint-config-airbnb-base
+    "airbnb-base",
+  ],
+  "plugins": [
+    "import",
+    "async-await",
+    "protractor",
+  ],
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true,
+    "jasmine": true,
+    "protractor": true,
+  },
+  "rules": {
+    "no-param-reassign": 0,
+    "no-new": 0,
+    "no-underscore-dangle": 0,
+    "no-plusplus": 0,
+    "radix": 0,
+    "class-methods-use-this": 0,
+    "consistent-return": 0,
+    "no-prototype-builtins": 0,
+    "no-use-before-define": [
+      2,
+      {
+        "functions": false,
+        "classes": false,
+      }
+    ],
+    "no-restricted-syntax": [
+      2,
+      "LabeledStatement",
+      "WithStatement",
+    ],
+    ### Import ###
+    "import/no-dynamic-require": 0,
+    "import/newline-after-import": 0,
+    "import/prefer-default-export": 0,
+    ### Protractor ###
+    "protractor/no-browser-pause": warn,
+    "protractor/no-absolute-url": 0,
+    "protractor/no-repetitive-selectors": warn,
+    ### Async await ###
+    "async-await/space-after-async": error,
+    "async-await/space-after-await": error,
+  },
+  "globals": {
+    "angular": true,
+    "browser": true,
+    "jasmine": true,
+    "protractor": true,
+    "$": true, # protractor CSS locator
+    "$$": true, # protractor CSS locator
+    "element": true,
+    "by": true,
+    "describe": true,
+    "it": true,
+    "beforeEach": true,
+    "afterEach": true,
+    "expect": true,
+  },
+}
